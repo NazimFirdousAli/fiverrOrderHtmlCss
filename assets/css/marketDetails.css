@@ -322,7 +322,7 @@ button {
   width: 100%;
 }
 .col-1 {
-  width: 30%;
+  width: 20%;
 }
 .col-1 .image-div {
   display: flex;
@@ -335,25 +335,80 @@ button {
 .col-2 {
   width: 60%;
 }
-.col-2 .header-div{
-    display: flex;
+.col-2 .header-div {
+  display: flex;
 }
 
 .col-2 .header-div1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 90%;
 }
+
+.col-2 .header-div1 .form-select {
+  background: ghostwhite;
+  padding: 7px 12px;
+  border-radius: 5%;
+  border: none;
+  color: #b1b5c3;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .col-2 .price-of-the-day {
   margin-left: 1%;
   display: flex;
   justify-content: center;
   background-color: ghostwhite;
   border-radius: 5%;
+  padding: 0px 10px;
 }
 
+.select-dropdown-container {
+  height:40px;
+  overflow-y:auto;
+}
 
+option{
+  overflow-y:scroll;
+}
 
+.row {
+  display: flex;
+}
+.cell {
+  padding: 0px 35px;
+}
 
+/* a{
+  color: white !important;
+} */
+#chartdiv {
+  width: 100%;
+  height: 500px;
+  color: white;
+}
 
+.amcharts-graph-label {
+  opacity: 0;
+  color: white;
+}
+
+.bottom-button {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.bottom-button button {
+  margin-left: 5%;
+  background-color: white;
+  color: black !important;
+  padding: 0px 1%;
+  border-radius: 5%;
+  font-size: 12px;
+}
+.footer-class {
+  height: 40px;
+  background-color: #b1b5c3;
+  margin-top: 10%;
+}

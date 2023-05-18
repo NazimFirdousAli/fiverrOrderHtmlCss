@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="./app.js"></script>
+
+
+    <link href="https://unpkg.com/singledivui/dist/singledivui.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,7 +44,6 @@
 
     </header>
 
-
     <section class="section trend" aria-label="crypto trend" data-section>
         <div class="coins-container">
 
@@ -65,9 +66,27 @@
                         </div>
 
                         <div class="header-div1">
-                            <span>USD:</span>
-                            <div class="price-of-the-day">
-                                <h1>$500</h1>
+
+                            <div class="">
+                                <!-- <select> -->
+                                <select class="form-select select-dropdown-container" aria-label=".form-select-lg example">
+                                    <option selected>USD</option>
+                                    <option value="1">RS</option>
+                                    <option value="2">INR</option>
+                                    <option value="3">POUND</option>
+                                    <option selected>USD</option>
+                                    <option value="1">RS</option>
+                                    <option value="2">INR</option>
+                                    <option value="3">POUND</option>
+                                    <option selected>USD</option>
+                                    <option value="1">RS</option>
+                                    <option value="2">INR</option>
+                                    <option value="3">POUND</option>
+                                    <option selected>USD</option>
+                                    <option value="1">RS</option>
+                                    <option value="2">INR</option>
+                                    <option value="3">POUND</option>
+                                </select>
                             </div>
                         </div>
 
@@ -79,17 +98,40 @@
                         </div>
 
                     </div>
-                    <div>
-                        <div style="width:75%;">
-                            <canvas id="canvas"></canvas>
+
+
+                    <div style="margin-top: 10%; display: flex; justify-content: center; color: aliceblue;" class="row">
+                        <div style="width:100%; color:white ;">
+                            <div style="width:100%; color:white ;" id="chartdiv"></div>
                         </div>
                     </div>
+
+                    <div class="bottom-button">
+                        <button>Last 1 hour</button>
+                        <button>Last 7 days</button>
+                        <button>Last 1 month</button>
+                        <button>Last 6 month</button>
+                        <button>Last 1 year</button>
+
+                    </div>
+
+
                 </div>
 
             </div>
         </div>
     </section>
+    <footer class="footer-class"></footer>
 
 </body>
+<script src="https://unpkg.com/singledivui/dist/singledivui.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script>
+    AmCharts.themes.light = { themeName: "light", AmChart: { color: "white", backgroundColor: "#FFFFFF" }, AmCoordinateChart: { colors: ["#67b7dc", "#fdd400", "#84b761", "#cc4748", "#cd82ad", "#2f4074", "#448e4d", "#b7b83f", "#b9783f", "#b93e3d", "#913167"] }, AmStockChart: { colors: ["#67b7dc", "#fdd400", "#84b761", "#cc4748", "#cd82ad", "#2f4074", "#448e4d", "#b7b83f", "#b9783f", "#b93e3d", "#913167"] }, AmSlicedChart: { colors: ["#67b7dc", "#fdd400", "#84b761", "#cc4748", "#cd82ad", "#2f4074", "#448e4d", "#b7b83f", "#b9783f", "#b93e3d", "#913167"], outlineAlpha: 1, outlineThickness: 2, labelTickColor: "#ffffff", labelTickAlpha: 0.3 }, AmRectangularChart: { zoomOutButtonColor: '#ffffff', zoomOutButtonRollOverAlpha: 0.15, zoomOutButtonImage: "lens" }, AxisBase: { axisColor: "#ffffff", axisAlpha: 0.3, gridAlpha: 0.1, gridColor: "#ffffff" }, ChartScrollbar: { backgroundColor: "#ffffff", backgroundAlpha: 0.12, graphFillAlpha: 0.5, graphLineAlpha: 0, selectedBackgroundColor: "#FFFFFF", selectedBackgroundAlpha: 0.4, gridAlpha: 0.15 }, ChartCursor: { cursorColor: "#ffffff", color: "#FFFFFF", cursorAlpha: 0.5 }, AmLegend: { color: "#ffffff" }, AmGraph: { lineAlpha: 0.9 }, GaugeArrow: { color: "#ffffff", alpha: 0.8, nailAlpha: 0, innerRadius: "40%", nailRadius: 15, startWidth: 15, borderAlpha: 0.8, nailBorderAlpha: 0 }, GaugeAxis: { tickColor: "#ffffff", tickAlpha: 1, tickLength: 15, minorTickLength: 8, axisThickness: 3, axisColor: '#ffffff', axisAlpha: 1, bandAlpha: 0.8 }, TrendLine: { lineColor: "#c03246", lineAlpha: 0.8 }, AreasSettings: { alpha: 0.8, color: "#67b7dc", colorSolid: "#003767", unlistedAreasAlpha: 0.4, unlistedAreasColor: "#ffffff", outlineColor: "#FFFFFF", outlineAlpha: 0.5, outlineThickness: 0.5, rollOverColor: "#3c5bdc", rollOverOutlineColor: "#FFFFFF", selectedOutlineColor: "#FFFFFF", selectedColor: "#f15135", unlistedAreasOutlineColor: "#FFFFFF", unlistedAreasOutlineAlpha: 0.5 }, LinesSettings: { color: "#ffffff", alpha: 0.8 }, ImagesSettings: { alpha: 0.8, labelColor: "#ffffff", color: "#ffffff", labelRollOverColor: "#3c5bdc" }, ZoomControl: { buttonFillAlpha: 0.7, buttonIconColor: "#a7a7a7" }, SmallMap: { mapColor: "#ffffff", rectangleColor: "#f15135", backgroundColor: "#FFFFFF", backgroundAlpha: 0.7, borderThickness: 1, borderAlpha: 0.8 }, PeriodSelector: { color: "#ffffff" }, PeriodButton: { color: "#ffffff", background: "transparent", opacity: 0.7, border: "1px solid rgba(0, 0, 0, .3)", MozBorderRadius: "5px", borderRadius: "5px", margin: "1px", outline: "n100", boxSizing: "border-box" }, PeriodButtonSelected: { color: "#ffffff", backgroundColor: "#b9cdf5", border: "1px solid rgba(0, 0, 0, .3)", MozBorderRadius: "5px", borderRadius: "5px", margin: "1px", outline: "none", opacity: 1, boxSizing: "border-box" }, PeriodInputField: { color: "#ffffff", background: "transparent", border: "1px solid rgba(0, 0, 0, .3)", outline: "none" }, DataSetSelector: { color: "#ffffff", selectedBackgroundColor: "#b9cdf5", rollOverBackgroundColor: "#a8b0e4" }, DataSetCompareList: { color: "#ffffff", lineHeight: "100%", boxSizing: "initial", webkitBoxSizing: "initial", border: "1px solid rgba(0, 0, 0, .3)" }, DataSetSelect: { border: "1px solid rgba(0, 0, 0, .3)", outline: "none" } };
+</script>
+<script src="./app.js"></script>
+
+
 
 </html>
